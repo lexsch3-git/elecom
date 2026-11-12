@@ -1,0 +1,15 @@
+'use strict';
+const $=id=>document.getElementById(id);
+const number=id=>Math.max(0,Number($(id).value)||0);
+const words=n=>({1:'one',2:'two',3:'three',4:'four',5:'five',6:'six',7:'seven',8:'eight',9:'nine',10:'ten'}[n]||String(n));
+function update(){const members=Math.max(1,number('members')),receipts=number('receipts'),votes=number('votes'),seats=Math.max(1,number('seats')),min=Math.floor(members/2)+1;
+$('minimum').textContent=min;$('receiptPct').textContent=(100*receipts/members).toFixed(2)+'%';$('turnout').textContent=(100*votes/members).toFixed(2)+'%';$('status').textContent=receipts>=min?'Quorum reached':'Not met';$('status').style.color=receipts>=min?'#116b4c':'#a33b26';$('math').textContent=`Quorum = floor(${members} ÷ 2) + 1 = ${min}. Receipts: ${receipts} ÷ ${members} × 100 = ${(100*receipts/members).toFixed(2)}%. Actual turnout: ${votes} ÷ ${members} × 100 = ${(100*votes/members).toFixed(2)}%.`;
+document.querySelectorAll('.seatText').forEach(e=>e.textContent=`${words(seats)} (${seats})`);
+const date=$('date').value;let displayDate='________________';if(date){const [y,m,d]=date.split('-');displayDate=`${m}/${d}/${y}`;}document.querySelectorAll('.dateText').forEach(e=>e.textContent=displayDate);document.querySelectorAll('.timeText').forEach(e=>e.textContent=$('time').value||'________________');document.querySelectorAll('.venueText').forEach(e=>e.textContent=$('venue').value||'________________');document.querySelectorAll('.contactText').forEach(e=>e.textContent=$('contact').value||'________________');
+renderCandidates();}
+function renderCandidates(){const names=$('candidates').value.split('\n').map(s=>s.trim()).filter(Boolean);$('ballotCandidates').innerHTML='';(names.length?names:Array.from({length:8},(_,i)=>`Candidate ${i+1}: _______________________`)).forEach(name=>{const el=document.createElement('div');el.className='candidate';el.textContent='☐  '+name;$('ballotCandidates').appendChild(el);});}
+for(let i=1;i<=12;i++){const tr=document.createElement('tr');tr.innerHTML=`<td>${i}</td><td></td><td></td><td></td><td></td><td></td><td></td>`;$('receiptRows').appendChild(tr);}
+document.querySelectorAll('input,textarea').forEach(e=>e.addEventListener('input',update));
+document.querySelectorAll('[data-tab]').forEach(button=>button.addEventListener('click',()=>{document.querySelectorAll('[data-tab]').forEach(b=>b.setAttribute('aria-selected',String(b===button)));document.querySelectorAll('.tabpanel').forEach(p=>p.classList.toggle('hidden',p.id!==button.dataset.tab));}));
+document.querySelectorAll('[data-print]').forEach(b=>b.addEventListener('click',()=>{document.querySelectorAll('.panel').forEach(p=>p.classList.remove('printing'));const panel=$(b.dataset.print);panel.classList.add('printing');document.body.classList.toggle('print-landscape',b.dataset.print==='receipt');window.print();}));
+window.addEventListener('afterprint',()=>{document.querySelectorAll('.panel').forEach(p=>p.classList.remove('printing'));document.body.classList.remove('print-landscape');});update();

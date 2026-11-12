@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>PGEV2HOAI Election Guide</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <header class="hero">
+        <div class="wrap"><span class="eyebrow">PGEV PHASE II HOMEOWNERS ASSOCIATION, INC. · NCR-HOA 06-0071</span>
+            <h1>Election Committee Guide</h1>
+            <p>Three printable forms · clear notice records · transparent quorum math</p>
+        </div>
+    </header>
+    <main class="wrap">
+        <section class="notice warning"><strong>Preparation draft — not an official election call.</strong> PGEV2HOAI is
+            awaiting DHSUD direction. Confirm the authorized election procedure, current bylaws, voter list and five
+            Board seats before issuing official documents. A signed acknowledgment is not a ballot.</section>
+        <section class="panel">
+            <h2>Election settings</h2>
+            <div class="fields"><label>Eligible members<input id="members" type="number" min="1"
+                        value="154"></label><label>Verified qualifying notice recipients<input id="receipts"
+                        type="number" min="0" value="100"></label><label>Actual ballots cast<input id="votes"
+                        type="number" min="0" value="50"></label><label>Board seats<input id="seats" type="number"
+                        min="1" value="5"></label><label>Election date<input id="date"
+                        type="date"></label><label>Election time<input id="time" type="time"></label><label>Venue<input
+                        id="venue" placeholder="To be confirmed"></label><label>ELECOM contact<input id="contact"
+                        placeholder="Contact number or email"></label></div>
+            <div class="stats">
+                <div><small>Minimum majority quorum</small><strong id="minimum">78</strong></div>
+                <div><small>Verified notice receipts</small><strong id="receiptPct">64.94%</strong></div>
+                <div><small>Actual voter turnout</small><strong id="turnout">32.47%</strong></div>
+                <div><small>Numerical quorum status</small><strong id="status">Met</strong></div>
+            </div>
+            <p id="math" class="formula"></p>
+            <p class="muted">Calculation assumes the entered eligible-member count is verified and each counted receipt
+                corresponds to a distinct eligible voting entitlement. Reaching the numerical threshold alone does not
+                establish legal validity.</p>
+        </section>
+        <nav class="tabs" role="tablist" aria-label="Election forms"><button role="tab" aria-selected="true"
+                data-tab="notice">1 · Official Notice</button><button role="tab" aria-selected="false"
+                data-tab="receipt">2 · Master Receipt</button><button role="tab" aria-selected="false"
+                data-tab="ballot">3 · Official Ballot</button></nav>
+        <section class="panel tabpanel" id="notice" role="tabpanel">
+            <div class="bar">
+                <div>
+                    <h2>Form 1 — Official Notice of Election</h2>
+                    <p class="muted">Give to every eligible member. Keep proof of service separately.</p>
+                </div><button class="print" data-print="notice">Print this form</button>
+            </div>
+            <article class="paper" id="print-notice">
+                <div class="paperhead"><strong>PARKWOOD GREENS EXECUTIVE VILLAGE PHASE II HOMEOWNERS ASSOCIATION,
+                        INC.</strong><small>HOA Registry No. NCR-HOA 06-0071</small>
+                    <h2>OFFICIAL NOTICE OF ELECTION</h2>
+                </div>
+                <p>Dear Fellow Homeowners,</p>
+                <p>Please be informed that an election will be held to elect <strong><span class="seatText">five
+                            (5)</span> members of the Board of Directors</strong> of PGEV Phase II Homeowners
+                    Association, Inc., subject to the authorized election arrangements.</p>
+                <dl>
+                    <dt>DATE</dt>
+                    <dd class="dateText">________________</dd>
+                    <dt>TIME</dt>
+                    <dd class="timeText">________________</dd>
+                    <dt>VENUE</dt>
+                    <dd class="venueText">________________</dd>
+                    <dt>PURPOSE</dt>
+                    <dd>Election of <span class="seatText">five (5)</span> Board members</dd>
+                </dl>
+                <p>Qualified members are encouraged to vote personally or through a duly authorized proxy in accordance
+                    with applicable election rules.</p>
+                <p>For questions and proxy procedures, contact: <span class="contactText">________________</span>.</p>
+                <p>Respectfully,<br><strong>PGEV2HOAI ELECTION COMMITTEE</strong></p>
+                <p class="footnote">Receipt of this notice may be documented on the Master Acknowledgment of Receipt.
+                    Signing for receipt is not a vote or a promise to vote.</p>
+            </article>
+        </section>
+        <section class="panel tabpanel hidden" id="receipt" role="tabpanel">
+            <div class="bar">
+                <div>
+                    <h2>Form 2 — Master Acknowledgment of Receipt</h2>
+                    <p class="muted">Use one sheet per street; collect signatures only after actually delivering the
+                        official notice.</p>
+                </div><button class="print" data-print="receipt">Print this form</button>
+            </div>
+            <article class="paper landscape" id="print-receipt">
+                <div class="paperhead"><strong>PGEV PHASE II HOMEOWNERS ASSOCIATION, INC.</strong><small>Registry No.
+                        NCR-HOA 06-0071</small>
+                    <h2>MASTER ACKNOWLEDGMENT OF RECEIPT</h2>
+                    <p>Official Notice of Election · <span class="seatText">five (5)</span> Board members</p>
+                </div>
+                <p><strong>Street:</strong> _______________________ &nbsp; <strong>Election date:</strong> <span
+                        class="dateText">____________</span></p>
+                <p>By signing below, the recipient confirms receipt of the Official Notice of Election. This is not a
+                    ballot or commitment to participate.</p>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>No.</th>
+                            <th>Eligible member</th>
+                            <th>Property address</th>
+                            <th>Recipient (if different)</th>
+                            <th>Relationship</th>
+                            <th>Signature</th>
+                            <th>Date received</th>
+                        </tr>
+                    </thead>
+                    <tbody id="receiptRows"></tbody>
+                </table>
+                <p>Distributed by: ____________________ &nbsp; Verified by: ____________________</p>
+                <p class="footnote">For absent households, keep a separate follow-up log. Do not count unsuccessful
+                    delivery attempts, duplicates, or unverified receipts toward quorum.</p>
+            </article>
+        </section>
+        <section class="panel tabpanel hidden" id="ballot" role="tabpanel">
+            <div class="bar">
+                <div>
+                    <h2>Form 3 — Official Election Ballot</h2>
+                    <p class="muted">Print separately for the authorized secret-ballot election. Enter candidate names
+                        below.</p>
+                </div><button class="print" data-print="ballot">Print this form</button>
+            </div><label class="candidate-label">Candidate names (one per line)<textarea id="candidates" rows="7"
+                    placeholder="Candidate A&#10;Candidate B&#10;Candidate C"></textarea></label>
+            <article class="paper" id="print-ballot">
+                <div class="paperhead"><strong>PGEV PHASE II HOMEOWNERS ASSOCIATION, INC.</strong><small>Registry No.
+                        NCR-HOA 06-0071</small>
+                    <h2>OFFICIAL ELECTION BALLOT</h2>
+                    <p>Election of <span class="seatText">five (5)</span> Board members</p>
+                </div>
+                <p><strong>Election date:</strong> <span class="dateText">____________</span></p>
+                <p>Mark the box beside your preferred candidates. <strong>Vote for not more than <span
+                            class="seatText">five (5)</span> candidates.</strong></p>
+                <div id="ballotCandidates"></div>
+                <p class="footnote">Do not write your name or signature on this ballot. Only ballots officially issued
+                    under the approved election procedure may be counted.</p>
+            </article>
+        </section>
+        <section class="panel">
+            <h2>Process at a glance</h2>
+            <ol>
+                <li>Confirm DHSUD authority, ELECOM constitution, bylaws and membership list.</li>
+                <li>Issue Form 1 to <strong>all</strong> eligible members; record qualifying receipts on Form 2.</li>
+                <li>Verify unique eligible recipients and calculate quorum; do not confuse receipts with votes.</li>
+                <li>Issue separate anonymous Form 3 ballots at the authorized election and record actual turnout.</li>
+                <li>Preserve delivery logs, proxies, ballots, canvass, minutes and election report for DHSUD.</li>
+            </ol>
+            <p class="muted">Reference for review: DHSUD Department Circular No. 2024-018, Rule XIII, Sections 89–93;
+                DHSUD Interim MC No. 2025-003. Verify exact procedures and any updated instructions with DHSUD.</p>
+        </section>
+    </main>
+    <footer class="wrap">PGEV2HOAI · Offline reference tool · No information is transmitted or saved to a server.
+    </footer>
+    <script src="script.js"></script>
+</body>
+
+</html>
