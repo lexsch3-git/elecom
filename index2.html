@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PGEV2HOAI | DHSUD Election Documentation</title>
+  <link rel="stylesheet" href="styles2.css">
+  <script src="script2.js" defer></script>
+</head>
+<body>
+  <header class="hero">
+    <div class="wrap">
+      <p class="eyebrow">PGEV2HOAI · NCR-HOA 06-0071</p>
+      <h1>DHSUD Election Documentation</h1>
+      <p>Editable Election Committee report, annexes and printable records · Department Circular No. 2024-018</p>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <aside class="notice"> <strong>Preparation template — not an official DHSUD form.</strong> The election and Interim Board process remain subject to DHSUD authorization. Section 89(h) of the 2024 Revised IRR calls for an election report within 15 days after the election; the tabs below are a suggested supporting package, not a prescribed 7-tab filing format. Do not treat signed notices as ballots.</aside>
+
+    <section class="panel settings" aria-labelledby="settings-title">
+      <h2 id="settings-title">Election details <span class="hint">Edit once; forms update automatically</span></h2>
+      <div class="fields">
+        <label>Association name <input id="association" value="Parkwood Greens Executive Village Phase II Homeowners Association, Inc."></label>
+        <label>Registry number <input id="registry" value="NCR-HOA 06-0071"></label>
+        <label>Election date <input id="electionDate" type="date"></label>
+        <label>Election venue <input id="venue" placeholder="Venue"></label>
+        <label>Election time <input id="time" placeholder="e.g. 9:00 AM–3:00 PM"></label>
+        <label>DHSUD order / authority <input id="authority" placeholder="Order number / date (if issued)"></label>
+        <label>ELECOM chairperson <input id="chair" placeholder="Name"></label>
+        <label>ELECOM member 2 <input id="member2" placeholder="Name"></label>
+        <label>ELECOM member 3 <input id="member3" placeholder="Name"></label>
+        <label>Eligible members <input id="eligible" type="number" min="1" value="154"></label>
+        <label>Qualifying notice recipients <input id="receipts" type="number" min="0" value="0"></label>
+        <label>Actual voters (in person) <input id="inPerson" type="number" min="0" value="0"></label>
+        <label>Actual voters (proxy) <input id="proxy" type="number" min="0" value="0"></label>
+        <label>Valid ballots <input id="valid" type="number" min="0" value="0"></label>
+        <label>Invalid / spoiled ballots <input id="invalid" type="number" min="0" value="0"></label>
+        <label>Notices distributed <input id="distributed" type="number" min="0" value="0"></label>
+        <label>Signed acknowledgments <input id="signed" type="number" min="0" value="0"></label>
+        <label>Other qualifying receipts <input id="other" type="number" min="0" value="0"></label>
+        <label>Unresolved delivery cases <input id="unresolved" type="number" min="0" value="0"></label>
+      </div>
+      <div class="stats" aria-live="polite">
+        <div><small>Eligible members</small><strong id="statEligible">154</strong></div>
+        <div><small>Minimum majority quorum</small><strong id="statMinimum">78</strong></div>
+        <div><small>Verified notice receipts</small><strong id="statReceipts">0</strong></div>
+        <div><small>Actual voter turnout</small><strong id="statTurnout">0%</strong></div>
+      </div>
+      <p id="formula" class="formula"></p>
+      <p id="quorumStatus" class="status"></p>
+      <p class="hint">The calculator is numerical only. The ELECOM must verify unique eligible members, valid service and receipts; the reported receipt total must not contain duplicates. Actual votes are calculated separately.</p>
+    </section>
+
+    <nav class="tabs" role="tablist" aria-label="Election report forms">
+      <button type="button" role="tab" aria-selected="true" data-tab="transmittal">1 · Transmittal</button>
+      <button type="button" role="tab" aria-selected="false" data-tab="report">2 · ELECOM Report</button>
+      <button type="button" role="tab" aria-selected="false" data-tab="quorum">3 · Notice &amp; Quorum</button>
+      <button type="button" role="tab" aria-selected="false" data-tab="canvass">4 · Canvass</button>
+      <button type="button" role="tab" aria-selected="false" data-tab="proclamation">5 · Proclamation</button>
+      <button type="button" role="tab" aria-selected="false" data-tab="checklist">6 · Filing Checklist</button>
+    </nav>
+
+    <section id="transmittal" class="panel tabpanel" role="tabpanel">
+      <div class="toolbar"><h2>Transmittal Letter</h2><button type="button" class="print" data-print="transmittal">Print this form</button></div>
+      <article class="paper">
+        <div class="letterhead"><h3 class="assoc"></h3><p class="registry"></p></div>
+        <p>Date: <span class="line"></span></p>
+        <p><strong>THE REGIONAL DIRECTOR</strong><br>Department of Human Settlements and Urban Development<br>National Capital Region</p>
+        <p><strong>Subject: Submission of Election Committee Report and Supporting Documents</strong></p>
+        <p>Dear Regional Director:</p>
+        <p>Pursuant to Rule XIII, Section 89(h) of DHSUD Department Circular No. 2024-018, the Election Committee respectfully submits its report on the special election of five (5) Board of Directors members held on <span class="electionDate"></span> at <span class="venue"></span>.</p>
+        <p>The attached records include the committee's authority, election guidelines, membership and candidate verification, notice-receipt and quorum documentation, voting results, canvass, and proclamation.</p>
+        <p>We respectfully submit the enclosed records for your office's information and appropriate action, subject to any additional requirements your office may direct.</p>
+        <p>Respectfully,</p><div class="signature"><span class="chair"></span><br>Election Committee Chairperson</div>
+        <p><strong>Attachments:</strong> Election Committee Report and Supporting Annexes</p>
+      </article>
+    </section>
+
+    <section id="report" class="panel tabpanel hidden" role="tabpanel">
+      <div class="toolbar"><h2>Election Committee Report</h2><button type="button" class="print" data-print="report">Print this form</button></div>
+      <article class="paper">
+        <div class="letterhead"><h3>ELECTION COMMITTEE REPORT</h3><p class="assoc"></p><p class="registry"></p></div>
+        <h4>I. Election Information</h4>
+        <p>Date: <span class="electionDate"></span> &nbsp; Time: <span class="time"></span><br>Venue: <span class="venue"></span><br>Election type: Special election of five (5) Board members<br>Authority / DHSUD order: <span class="authority"></span></p>
+        <h4>II. Committee Composition</h4>
+        <table><thead><tr><th>Role</th><th>Name</th></tr></thead><tbody><tr><td>Chairperson</td><td class="chair"></td></tr><tr><td>Member</td><td class="member2"></td></tr><tr><td>Member</td><td class="member3"></td></tr></tbody></table>
+        <h4>III. Membership and Notification</h4>
+        <table><tbody><tr><td>Eligible members</td><td class="eligible"></td></tr><tr><td>Notices distributed</td><td class="distributed"></td></tr><tr><td>Signed acknowledgments</td><td class="signed"></td></tr><tr><td>Other qualifying receipts</td><td class="other"></td></tr><tr><td>Verified unique notice recipients</td><td class="receipts"></td></tr><tr><td>Unresolved delivery cases</td><td class="unresolved"></td></tr></tbody></table>
+        <h4>IV. Quorum and Voting</h4>
+        <p>Minimum numerical quorum: <strong class="minimum"></strong> · Verified recipients: <strong class="receipts"></strong> · Receipt percentage: <strong class="receiptPct"></strong></p>
+        <p>In-person voters: <span class="inPerson"></span> · Proxy voters: <span class="proxy"></span> · Actual voters: <strong class="totalVotes"></strong> · Actual turnout: <strong class="turnout"></strong></p>
+        <p>Valid ballots: <span class="valid"></span> · Invalid / spoiled ballots: <span class="invalid"></span></p>
+        <h4>V. Election Results and Incidents</h4>
+        <p>Attach the signed Official Canvassing Report and Proclamation. Record any objections, election protests, or incidents in a separate incident log.</p>
+        <p>Incidents / objections: ___________________________________________________________</p>
+        <h4>VI. Certification</h4>
+        <p>We certify that the figures and proceedings reported above are based on the records maintained by the Election Committee, subject to disclosed unresolved matters.</p>
+        <div class="signatures"><div>________________________<br><span class="chair"></span><br>Chairperson</div><div>________________________<br><span class="member2"></span><br>Member</div><div>________________________<br><span class="member3"></span><br>Member</div></div>
+      </article>
+    </section>
+
+    <section id="quorum" class="panel tabpanel hidden" role="tabpanel">
+      <div class="toolbar"><h2>Notice Receipt &amp; Quorum Certification</h2><button type="button" class="print" data-print="quorum">Print this form</button></div>
+      <article class="paper">
+        <div class="letterhead"><h3>ANNEX — NOTICE RECEIPT AND QUORUM CERTIFICATION</h3><p class="assoc"></p><p class="registry"></p></div>
+        <p>Election date: <span class="electionDate"></span></p>
+        <table><thead><tr><th>Notification / Quorum Item</th><th>Number</th></tr></thead><tbody>
+          <tr><td>Verified eligible members</td><td class="eligible"></td></tr>
+          <tr><td>Official notices distributed</td><td class="distributed"></td></tr>
+          <tr><td>Signed master acknowledgments</td><td class="signed"></td></tr>
+          <tr><td>Other qualifying receipts</td><td class="other"></td></tr>
+          <tr><td>Unresolved delivery cases</td><td class="unresolved"></td></tr>
+          <tr><td>Unique verified qualifying notice recipients</td><td class="receipts"></td></tr>
+          <tr><td>Required majority quorum</td><td class="minimum"></td></tr>
+          <tr><td>Receipt percentage</td><td class="receiptPct"></td></tr>
+        </tbody></table>
+        <p><strong>Calculation:</strong> <span class="quorumFormula"></span></p>
+        <p><strong>Committee finding:</strong> ☐ Quorum established &nbsp; ☐ Quorum not established</p>
+        <p>Verification note: Count each eligible member only once. A signature or electronic acknowledgment is not a ballot. A delivery attempt alone is not confirmed receipt. ELECOM must independently verify legal qualification of the receipt records.</p>
+        <h4>Supporting Records</h4>
+        <p>☐ Master voter list &nbsp; ☐ Official notice copy &nbsp; ☐ Signed master sheets<br>☐ Electronic acknowledgment evidence &nbsp; ☐ Delivery/follow-up log &nbsp; ☐ Proxy register</p>
+        <div class="signatures"><div>________________________<br><span class="chair"></span></div><div>________________________<br><span class="member2"></span></div><div>________________________<br><span class="member3"></span></div></div>
+      </article>
+    </section>
+
+    <section id="canvass" class="panel tabpanel hidden" role="tabpanel">
+      <div class="toolbar"><h2>Official Canvassing Report</h2><button type="button" class="print" data-print="canvass">Print this form</button></div>
+      <div class="candidate-editor"><label>Candidate names and votes (one per line: <code>Name | Votes</code>)<textarea id="candidates" rows="7" placeholder="Candidate A | 30&#10;Candidate B | 24"></textarea></label><p class="hint">Enter the actual candidates and vote totals. Do not invent results. Five Board seats are assumed, subject to governing documents and DHSUD authorization.</p></div>
+      <article class="paper">
+        <div class="letterhead"><h3>OFFICIAL CANVASSING REPORT</h3><p class="assoc"></p><p class="registry"></p></div>
+        <p>Election date: <span class="electionDate"></span> · Venue: <span class="venue"></span></p>
+        <p>Ballots cast: <strong class="totalVotes"></strong> · Valid: <strong class="valid"></strong> · Invalid / spoiled: <strong class="invalid"></strong></p>
+        <table><thead><tr><th>No.</th><th>Candidate</th><th>Votes received</th></tr></thead><tbody id="canvassRows"></tbody></table>
+        <p><strong>Ballot reconciliation / notes:</strong> ________________________________________________</p>
+        <p>Any disputed ballots, ties, recounts, or unresolved objections must be separately documented.</p>
+        <div class="signatures"><div>________________________<br><span class="chair"></span></div><div>________________________<br><span class="member2"></span></div><div>________________________<br><span class="member3"></span></div></div>
+      </article>
+    </section>
+
+    <section id="proclamation" class="panel tabpanel hidden" role="tabpanel">
+      <div class="toolbar"><h2>Proclamation of Elected Directors</h2><button type="button" class="print" data-print="proclamation">Print this form</button></div>
+      <article class="paper">
+        <div class="letterhead"><h3>PROCLAMATION OF ELECTION RESULTS</h3><p class="assoc"></p><p class="registry"></p></div>
+        <p>On <span class="electionDate"></span>, the Election Committee conducted the special election for five (5) members of the Board of Directors at <span class="venue"></span>.</p>
+        <p>Subject to the applicable election guidelines, validated results, and resolution of any material outstanding objections, the following individuals are proclaimed elected:</p>
+        <table><thead><tr><th>Seat</th><th>Elected candidate</th><th>Votes</th></tr></thead><tbody id="winnerRows"></tbody></table>
+        <p><strong>Proclamation date/time:</strong> __________________________________________</p>
+        <p><strong>Remarks / pending objections:</strong> __________________________________________</p>
+        <div class="signatures"><div>________________________<br><span class="chair"></span></div><div>________________________<br><span class="member2"></span></div><div>________________________<br><span class="member3"></span></div></div>
+        <p class="hint">Candidate ordering is an automatic drafting aid only. Review ties, eligibility, ballot rules, and protests before signing any proclamation.</p>
+      </article>
+    </section>
+
+    <section id="checklist" class="panel tabpanel hidden" role="tabpanel">
+      <div class="toolbar"><h2>DHSUD Filing Checklist</h2><button type="button" class="print" data-print="checklist">Print checklist</button></div>
+      <article class="paper">
+        <div class="letterhead"><h3>ELECTION DOCUMENTATION INDEX</h3><p class="assoc"></p><p class="registry"></p></div>
+        <p><strong>Report due:</strong> Within 15 days after election under IRR Section 89(h). Verify actual deadline and filing instructions with DHSUD.</p>
+        <table><thead><tr><th>Included</th><th>Suggested document / annex</th><th>Reference</th></tr></thead><tbody>
+          <tr><td>☐</td><td>Transmittal letter and signed Election Committee Report</td><td>IRR 89(h)</td></tr>
+          <tr><td>☐</td><td>DHSUD order / Interim Board and ELECOM authority</td><td>IRR 89; MC 2025-003</td></tr>
+          <tr><td>☐</td><td>Election guidelines, notices and proof of service</td><td>IRR 89–90</td></tr>
+          <tr><td>☐</td><td>Verified eligible member list and candidate screening records</td><td>IRR 89(d); 70–71</td></tr>
+          <tr><td>☐</td><td>Master acknowledgment sheets and delivery log</td><td>IRR 90–91</td></tr>
+          <tr><td>☐</td><td>Quorum certification and proxy register</td><td>IRR 91–92</td></tr>
+          <tr><td>☐</td><td>Election minutes, ballot reconciliation, canvass</td><td>IRR 89</td></tr>
+          <tr><td>☐</td><td>Proclamation and candidate vote totals</td><td>IRR 89(g)</td></tr>
+          <tr><td>☐</td><td>Incident / protest log, if any</td><td>Applicable election rules</td></tr>
+          <tr><td>☐</td><td>Original sensitive records retained securely</td><td>Recommended safeguard</td></tr>
+        </tbody></table>
+        <p><strong>Submitted by:</strong> ________________________ <strong>Date:</strong> __________________</p>
+        <p><strong>DHSUD receiving reference:</strong> ____________________________________________</p>
+        <p class="hint">This index is a suggested binder organization. Confirm the exact required attachments and whether certified copies or summaries are preferred.</p>
+      </article>
+    </section>
+  </main>
+  <footer class="wrap">PGEV2HOAI · Offline editable templates · No personal data is transmitted or saved automatically.</footer>
+</body>
+</html>
